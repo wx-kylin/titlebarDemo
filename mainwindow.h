@@ -40,7 +40,6 @@ private:
     } m_titlebarLeft;
     int m_titlebarType;
     bool m_titlebarPressed = 0;
-    bool m_titleChangingFlag = 0;
     QString m_titlebarLeftPosition;
     bool m_titlebarOn = 0;
     bool m_midWidShow = false;

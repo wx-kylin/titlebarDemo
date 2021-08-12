@@ -134,7 +134,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
             } else {
                 if (m_titlebarOn == 1) {
                     m_titlebarOn = 0;
-                    this->setCursor(Qt::ArrowCursor);
+//                    this->setCursor(Qt::ArrowCursor);
 
                     QDBusMessage message = QDBusMessage::createMethodCall("org.ukui.KWin",
                                             "/KWin",
@@ -157,10 +157,8 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
     if (m_titlebarType != 0) {
         if (((event->pos().x() - 0) >= (m_titlebarLeft.value - 3 > 0 ? (m_titlebarLeft.value - 100): 0)) && ((event->pos().x() - 0) <= (m_titlebarLeft.value + 3))) {
             m_titlebarPressed = 1;
-            m_titleChangingFlag = 1;
         } else {
             m_titlebarPressed = 0;
-            m_titleChangingFlag = 0;
         }
     }
 }
@@ -171,7 +169,6 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
     if (m_titlebarType != 0) {
         if (m_titlebarPressed == 1) {
             m_titlebarPressed = 0;
-            m_titleChangingFlag = 0;
         }
     }
 }
